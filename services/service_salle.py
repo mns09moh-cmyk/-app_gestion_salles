@@ -52,3 +52,8 @@ class ServiceSalle:
 
         self.dao_salle.delete_salle(code)
         return True, "Salle supprimée avec succès."
+
+    def rechercher_salle(self, code):
+        if not code:
+            return None
+        return self.dao_salle.get_salle(code)
