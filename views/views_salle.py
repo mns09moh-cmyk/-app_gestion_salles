@@ -26,3 +26,17 @@ class ViewSalle(ctk.CTk):
         ctk.CTkLabel(self.cadreInfo, text="Capacité :").grid(row=3, column=0, padx=10, pady=5, sticky="w")
         self.entry_capacite = ctk.CTkEntry(self.cadreInfo, width=200)
         self.entry_capacite.grid(row=3, column=1, padx=10, pady=5)
+        self.cadreActions = ctk.CTkFrame(self, corner_radius=10)
+        self.cadreActions.pack(pady=10, padx=10, fill="x")
+
+        self.btn_ajouter = ctk.CTkButton(self.cadreActions, text="Ajouter")
+        self.btn_ajouter.grid(row=0, column=0, padx=10, pady=10)
+
+        self.btn_modifier = ctk.CTkButton(self.cadreActions, text="Modifier")
+        self.btn_modifier.grid(row=0, column=1, padx=10, pady=10)
+
+        self.btn_supprimer = ctk.CTkButton(self.cadreActions, text="Supprimer")
+        self.btn_supprimer.grid(row=0, column=2, padx=10, pady=10)
+
+        self.btn_rechercher = ctk.CTkButton(self.cadreActions, text="Rechercher")
+        self.btn_rechercher.grid(row=0, column=3, padx=10, pady=10)
