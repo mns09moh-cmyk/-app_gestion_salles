@@ -29,16 +29,16 @@ class ViewSalle(ctk.CTk):
         self.cadreActions = ctk.CTkFrame(self, corner_radius=10)
         self.cadreActions.pack(pady=10, padx=10, fill="x")
 
-        self.btn_ajouter = ctk.CTkButton(self.cadreActions, text="Ajouter")
+        self.btn_ajouter = ctk.CTkButton(self.cadreActions, text="Ajouter", command=self.ajouter_salle)
         self.btn_ajouter.grid(row=0, column=0, padx=10, pady=10)
 
-        self.btn_modifier = ctk.CTkButton(self.cadreActions, text="Modifier")
+        self.btn_modifier = ctk.CTkButton(self.cadreActions, text="Modifier", command=self.modifier_salle)
         self.btn_modifier.grid(row=0, column=1, padx=10, pady=10)
 
-        self.btn_supprimer = ctk.CTkButton(self.cadreActions, text="Supprimer")
+        self.btn_supprimer = ctk.CTkButton(self.cadreActions, text="Supprimer", command=self.supprimer_salle)
         self.btn_supprimer.grid(row=0, column=2, padx=10, pady=10)
 
-        self.btn_rechercher = ctk.CTkButton(self.cadreActions, text="Rechercher")
+        self.btn_rechercher = ctk.CTkButton(self.cadreActions, text="Rechercher", command=self.rechercher_salle)
         self.btn_rechercher.grid(row=0, column=3, padx=10, pady=10)
 
     def vider_champs(self):
