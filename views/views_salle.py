@@ -102,3 +102,12 @@ class ViewSalle(ctk.CTk):
             self.vider_champs()
         else:
             messagebox.showerror("Erreur", msg)
+
+    def rechercher_salle(self):
+        code = self.entry_code.get()
+        salle = self.service_salle.rechercher_salle(code)
+
+        if salle:
+            self.remplir_champs(salle)
+        else:
+            messagebox.showerror("Erreur", "Salle introuvable.")
