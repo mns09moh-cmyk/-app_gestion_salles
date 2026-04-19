@@ -42,3 +42,13 @@ class ServiceSalle:
 
         self.dao_salle.update_salle(salle)
         return True, "Salle modifiée avec succès."
+
+    def supprimer_salle(self, code):
+        if not code:
+            return False, "Le code est obligatoire."
+
+        if not self.dao_salle.get_salle(code):
+            return False, "Salle introuvable."
+
+        self.dao_salle.delete_salle(code)
+        return True, "Salle supprimée avec succès."
