@@ -57,3 +57,8 @@ class ServiceSalle:
         if not code:
             return None
         return self.dao_salle.get_salle(code)
+
+    def recuperer_salles(self):
+        return self.dao_salle.get_salles()
+
+
