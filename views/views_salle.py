@@ -40,3 +40,22 @@ class ViewSalle(ctk.CTk):
 
         self.btn_rechercher = ctk.CTkButton(self.cadreActions, text="Rechercher")
         self.btn_rechercher.grid(row=0, column=3, padx=10, pady=10)
+
+        def vider_champs(self):
+            self.entry_code.delete(0, "end")
+            self.entry_libelle.delete(0, "end")
+            self.entry_type.delete(0, "end")
+            self.entry_capacite.delete(0, "end")
+
+        def remplir_champs(self, salle):
+            self.entry_code.delete(0, "end")
+            self.entry_code.insert(0, salle.code)
+
+            self.entry_libelle.delete(0, "end")
+            self.entry_libelle.insert(0, salle.libelle)
+
+            self.entry_type.delete(0, "end")
+            self.entry_type.insert(0, salle.type)
+
+            self.entry_capacite.delete(0, "end")
+            self.entry_capacite.insert(0, str(salle.capacite))
