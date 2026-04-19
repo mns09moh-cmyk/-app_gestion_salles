@@ -75,3 +75,19 @@ class ViewSalle(ctk.CTk):
             self.vider_champs()
         else:
             messagebox.showerror("Erreur", msg)
+
+    def modifier_salle(self):
+        salle = Salle(
+            self.entry_code.get(),
+            self.entry_libelle.get(),
+            self.entry_type.get(),
+            self.entry_capacite.get()
+        )
+
+        ok, msg = self.service_salle.modifier_salle(salle)
+
+        if ok:
+            messagebox.showinfo("Succès", msg)
+            self.vider_champs()
+        else:
+            messagebox.showerror("Erreur", msg)
