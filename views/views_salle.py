@@ -91,3 +91,14 @@ class ViewSalle(ctk.CTk):
             self.vider_champs()
         else:
             messagebox.showerror("Erreur", msg)
+
+    def supprimer_salle(self):
+        code = self.entry_code.get()
+
+        ok, msg = self.service_salle.supprimer_salle(code)
+
+        if ok:
+            messagebox.showinfo("Succès", msg)
+            self.vider_champs()
+        else:
+            messagebox.showerror("Erreur", msg)
